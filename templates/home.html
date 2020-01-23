@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Statistics API</title>
+	<link rel="stylesheet" href="static/home.css" />
+</head>
+<body>
+	<h2>With this API you can see statistics for your directory or file, such as:</h2>
+	<ul>
+		<li>List of contained directories (only for directories)</li>
+		<li>List of contained files (only for directories)</li>
+		<li>Number of files (only for directories)</li>
+	</ul>
+	<h3>And statistics for files with .txt, .docx, .md or .py extension (or you can choose files with specific extension(s) in form below):</h3>
+	<ul>
+		<li>5 most frequent words</li>
+		<li>5 of most rare words</li>
+		<li>Medium length of word</li>
+		<li>Percentage of vowels</li>
+		<li>Percentage of consonants</li>
+		<li>Number of syllables</li>
+	</ul>
+	<h3>Also you can get statistics for specific word, such as:</h3>
+	<ul>
+		<li>How many times word is found in directory/file</li>
+		<li>Number of vowels</li>
+		<li>Number of consonants</li>
+		<li>Number of syllables</li>
+	</ul>
+	<form method="POST" action="/result">
+		<p>Use this form to input path to directory or file:</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Path:</td>
+					<td>
+						<input name="path" type="TEXT" width="60">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Use this form to input specific file types (.txt, .md, .py or .docx) through comma (optional):</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Extension(s):</td>
+					<td>
+						<input name="extensions" type="TEXT" class="ext">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Use this form to input specific word (optional):</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Word:</td>
+					<td>
+						<input name="word" type="TEXT" width="60">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<input value="Get stats" type="SUBMIT">
+		</p>
+	</form>
+</body>
+</html>
