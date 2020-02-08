@@ -12,9 +12,9 @@ def path_input_page():
 @app.route('/result', methods=['POST'])
 def show_result():
 	path = request.form['path']
-	extensions = request.form['extensions']
+	extensions = request.form['extensions'].split(", ")
 	word = request.form['word']
-	result = defs.stats(path, extensions, word)
+	result = defs.whole_stats(path, *extensions, word=word)
 	return render_template('result.html', result=result)
 
 app.run()
